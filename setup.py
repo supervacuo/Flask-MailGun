@@ -5,8 +5,13 @@ Flask-MailGun
 Flask extension to use the Mailgun email parsing service
 for sending and receving emails
 """
-from pip.req import parse_requirements
 from io import open
+
+try:
+    from pip.req import parse_requirements
+except ImportError:
+    from pip._internal.req import parse_requirements
+
 try:
     from setuptools import setup
 except ImportError:
